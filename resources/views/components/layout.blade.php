@@ -4,26 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel Positions</title>
-    @vite(['resources/js/app.js'])
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
 </head>
-<body>
-    <div>
-        <nav>
+<body class="bg-black text-white">
+    <div class="px-10">
+        <nav class="flex justify-between items-center py-4 border-b border-white/10">
             <div>
-                <a href="">
+                <a href="/">
                     <!-- In order to load this image, you need to reference the folder in app.js -->
                     <img src="{{ Vite::asset('resources/images/logo.svg') }}" alt="">
                 </a>
             </div>
-            <div>
-                links
+            <div class="space-x-6 font-bold">
+                <a href="">Jobs</a>
+                <a href="">Careers</a>
+                <a href="">Salaries</a>
+                <a href="">Companies</a>
             </div>
             <div>
-                post a job
+                <a href="">Post a job</a>
             </div>
         </nav>
 
-        <main>
+        <main class="mt-10 max-w-[986px]">
             {{ $slot }}
         </main>
     </div>
