@@ -12,8 +12,9 @@
 */
 
 pest()->extend(Tests\TestCase::class)
- // ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
-    ->in('Feature');
+  ->use(Illuminate\Foundation\Testing\RefreshDatabase::class) //refresh db state after each test
+    //->in('Feature');
+    ->in('Feature', 'Unit'); //Include also unit tests if you want them to interact with the DB
 
 /*
 |--------------------------------------------------------------------------
