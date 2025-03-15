@@ -49,7 +49,7 @@ class RegisterUserController extends Controller
 
         Auth::login($user);
 
-        redirect('/');
+        return redirect('/');
     }
 
 }
