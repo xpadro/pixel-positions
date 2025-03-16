@@ -19,6 +19,6 @@
             @endforeach
         </div>
         
-        <x-employer-logo :width="42"/>
+        <x-employer-logo :employer="$job->employer"/>
     </div>
 </x-panel>
