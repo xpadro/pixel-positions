@@ -18,7 +18,11 @@ class JobController extends Controller
      */
     public function index()
     {
-        $jobs = Job::latest()->get()->groupBy('featured');
+        // Lazy load, leading to N+1 problem
+        // $jobs = Job::latest()->get()->groupBy('featured');
+
+        // Eager load of employer and tags
+        $jobs = Job::latest()->with(['employer', 'tags'])->get()->groupBy('featured');
 
         return view('jobs.index', [
             'jobs' => $jobs[0],
